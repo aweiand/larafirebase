@@ -1,18 +1,3 @@
-<p align="center"><img src="/art/cover.png" height="400"></p>
-
-<p align="center">
-    <a href="https://packagist.org/packages/kutia-software-company/larafirebase">
-        <img src="https://img.shields.io/packagist/dt/kutia-software-company/larafirebase" alt="Total Downloads">
-    </a>
-    <a href="https://packagist.org/packages/kutia-software-company/larafirebase">
-        <img src="https://img.shields.io/packagist/v/kutia-software-company/larafirebase" alt="Latest Stable Version">
-    </a>
-    <a href="https://packagist.org/packages/kutia-software-company/larafirebase">
-        <img src="https://img.shields.io/packagist/l/kutia-software-company/larafirebase" alt="License">
-    </a>
-</p>
-
-
 ### Introduction
 
 **Larafirebase** is a package thats offers you to send push notifications or custom messages via Firebase in Laravel.
@@ -29,12 +14,12 @@ Follow the steps below to install the package.
 **Composer**
 
 ```
-composer require kutia-software-company/larafirebase
+composer require aweiand/larafirebase
 ```
 
 **Copy Config**
 
-Run `php artisan vendor:publish --provider="Kutia\Larafirebase\Providers\LarafirebaseServiceProvider"` to publish the `larafirebase.php` config file.
+Run `php artisan vendor:publish --provider="Aweiand\Larafirebase\Providers\LarafirebaseServiceProvider"` to publish the `larafirebase.php` config file.
 
 **Get Athentication Key**
 
@@ -43,7 +28,8 @@ Get Authentication Key from https://console.firebase.google.com/
 **Configure larafirebase.php as needed**
 
 ```
-'authentication_key' => '{AUTHENTICATION_KEY}'
+'firebase_credentials_file' => '{PATH_TO_THE_CREDENTIALS_FILE}',
+'firebase_project_id' =>       '{FIREBASE_PROJECT_ID}'
 ```
 
 ### Usage
@@ -53,11 +39,11 @@ Follow the steps below to find how to use the package.
 Example usage in **Controller/Service** or any class:
 
 ```php
-use Kutia\Larafirebase\Facades\Larafirebase;
+use Aweiand\Larafirebase\Facades\Larafirebase;
 
 class MyController
 {
-    private $deviceTokens =['{TOKEN_1}', '{TOKEN_2}'];
+    private $deviceTokens ='{TOKEN_1}';
 
     public function sendNotification()
     {
@@ -94,7 +80,7 @@ Example usage in **Notification** class:
 
 ```php
 use Illuminate\Notifications\Notification;
-use Kutia\Larafirebase\Messages\FirebaseMessage;
+use Aweiand\Larafirebase\Messages\FirebaseMessage;
 
 class SendBirthdayReminder extends Notification
 {
@@ -193,4 +179,4 @@ return Larafirebase::fromRaw([
 
 ---
 
-<sup>Made with ♥ by Gentrit Abazi ([@gentritabazi](https://github.com/gentritabazi)).</sup>
+<sup>Made with ♥ by Augusto Weiand ([@aweiand](https://github.com/aweiand)).</sup>
