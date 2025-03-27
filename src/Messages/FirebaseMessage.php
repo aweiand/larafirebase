@@ -1,8 +1,8 @@
 <?php
 
-namespace Kutia\Larafirebase\Messages;
+namespace Aweiand\Larafirebase\Messages;
 
-use Kutia\Larafirebase\Facades\Larafirebase;
+use Aweiand\Larafirebase\Facades\Larafirebase;
 
 class FirebaseMessage
 {

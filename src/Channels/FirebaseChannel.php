@@ -1,6 +1,6 @@
 <?php
 
-namespace Kutia\Larafirebase\Channels;
+namespace Aweiand\Larafirebase\Channels;
 
 use Illuminate\Notifications\Notification;
 
@@ -11,7 +11,7 @@ class FirebaseChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        /** @var \Kutia\Larafirebase\FirebaseMessage $message */
+        /** @var \Aweiand\Larafirebase\FirebaseMessage $message */
         $message = $notification->toFirebase($notifiable);
     }
 }
